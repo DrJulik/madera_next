@@ -1,0 +1,33 @@
+.card {
+  position: relative;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+}
+
+.card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.gallery_card__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: none;
+  transition: 0.5s ease;
+  background-color: #fdfdfd;
+  display: flex;
+}
+
+.card:hover .gallery_card__overlay {
+  opacity: 1;
+}
+
+.overlay__text {
+  margin: auto 3rem auto auto;
+}

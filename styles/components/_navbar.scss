@@ -1,0 +1,46 @@
+.navbar {
+  overflow: hidden;
+  background-color: #ebebeb;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 60%; /* Full width */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  //   padding: 2rem;
+  transition: all 0.3s linear;
+}
+
+.logo {
+  height: 130px;
+  width: 140px;
+  transition: all 0.3 linear;
+}
+
+.logo-shrunk {
+  height: 90px;
+  width: 100px;
+}
+
+.nav-items {
+  display: flex;
+}
+
+.nav-item {
+  font-family: "Raleway", sans-serif;
+  list-style: none;
+  margin-right: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all linear 0.2s;
+
+  &.active {
+    color: #ff5151;
+  }
+
+  &:hover {
+    color: #ff5151;
+  }
+}

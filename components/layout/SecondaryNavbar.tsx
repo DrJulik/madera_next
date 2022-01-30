@@ -7,8 +7,8 @@ const Navbar = ({ onMain }: any) => {
     <header className="navbar" style={{ width: "100%" }}>
       <img
         className={`logo`}
-        src="./logo.png"
-        alt="Madera logo"
+        src="../logo.png"
+        alt="Madera logoa"
         onClick={() => router.push("/")}
       />
       <ul className="nav-items">

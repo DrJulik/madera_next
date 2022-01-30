@@ -11,7 +11,7 @@ const Footer = () => {
             <p>416-236.5381</p>
           </div>
 
-          <img className={`logo`} src="./logo.png" alt="" />
+          <img className={`logo`} src="../logo.png" alt="" />
           <div className="socials">
             <a href="https://www.facebook.com/maderaproducts" target="_blank">
               <svg

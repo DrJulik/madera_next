@@ -3,20 +3,10 @@ import { useState, useEffect } from "react";
 
 const Navbar = ({ onMain }: any) => {
   const router = useRouter();
-  const [fullWidth, setFullWidth] = useState(onMain ? false : true);
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && router.pathname === "/") {
-      window.addEventListener("scroll", () => {
-        setFullWidth(window.pageYOffset > 200);
-      });
-    }
-  }, [router.pathname, router.isReady, onMain]);
-
   return (
-    <header className="navbar" style={{ width: fullWidth ? "100%" : "" }}>
+    <header className="navbar" style={{ width: "100%" }}>
       <img
-        className={`${onMain ? (fullWidth ? "logo-shrunk" : "") : ""} logo`}
+        className={`logo`}
         src="./logo.png"
         alt="Madera logo"
         onClick={() => router.push("/")}

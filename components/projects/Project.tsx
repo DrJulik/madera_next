@@ -1,10 +1,11 @@
 import React from "react";
 import { useRouter } from "next/router";
-const GalleryItem = ({ id, mainImage, title }: any) => {
+
+const Project = ({ id, title, mainImage }: any) => {
   const router = useRouter();
   return (
     <div className="card" onClick={() => router.push(`/projects/${id}`)}>
-      <img src={mainImage} className="card__image" />
+      <img src={mainImage.url} className="card__image" />
       <div className="gallery_card__overlay">
         <div className="overlay__text">
           <h3>{title}</h3>
@@ -14,4 +15,4 @@ const GalleryItem = ({ id, mainImage, title }: any) => {
   );
 };
 
-export default GalleryItem;
+export default Project;

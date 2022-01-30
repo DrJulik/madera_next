@@ -2,6 +2,9 @@
 @import "./components/footer";
 @import "./components/gallery";
 @import "./components/contact_form";
+@import "./projects/projects";
+@import "./about";
+@import "./contact";
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
 * {
@@ -20,6 +23,7 @@ main {
   min-height: 100vh;
   position: relative;
   z-index: 1;
+  background-image: url("../public/white-waves.png");
   background-color: white;
 }
 

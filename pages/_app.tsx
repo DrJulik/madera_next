@@ -1,13 +1,24 @@
 import "../styles/index.scss";
 import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
+import App from "next/app";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <SimpleReactLightbox>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </SimpleReactLightbox>
   );
 }
+
+MyApp.getInitialProps = async (appContext: any) => {
+  // calls page's `getInitialProps` and fills `appProps.pageProps`
+  const appProps = await App.getInitialProps(appContext);
+
+  return { ...appProps };
+};
 
 export default MyApp;

@@ -4,15 +4,23 @@ import ContactForm from "../components/ContactForm";
 import FeaturedGallery from "../components/FeaturedGallery";
 import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ featuredProjects }: any) => {
+  const router = useRouter();
+  useEffect(() => {
+    if (router.query.success === "true") {
+      alert("Thank you for reaching out to us!");
+    }
+  }, [router.isReady]);
+
   return (
     <>
       <Head>
         <title>Madera | Kitchens | Closets</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Navbar />
       <Slider
         images={[
           {
@@ -51,7 +59,7 @@ const Home: NextPage = () => {
       <div className="container">
         <h2 className="section-heading">Featured projects</h2>
         <hr />
-        <FeaturedGallery />
+        <FeaturedGallery featuredProjects={featuredProjects} />
         <hr />
       </div>
       {/* contact block */}
@@ -77,5 +85,18 @@ const Home: NextPage = () => {
     </>
   );
 };
+export async function getStaticProps(context: any) {
+  const res = await fetch("https://madera-strapi.herokuapp.com/projects");
+  const projects = await res.json();
+
+  const featuredProjects = projects.filter((proj: any) => {
+    return proj.Favorite === true;
+  });
+  return {
+    props: {
+      featuredProjects,
+    }, // will be passed to the page component as props
+  };
+}
 
 export default Home;

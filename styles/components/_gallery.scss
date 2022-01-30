@@ -2,12 +2,15 @@
   position: relative;
   transition: all 0.5s ease-in;
   cursor: pointer;
+  height: 100%;
+  // box-shadow: #3a3a3a8c 1px 2px 5px 3px;
 }
 
 .card__image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  // height: 17rem;
 }
 .gallery_card__overlay {
   position: absolute;
@@ -20,12 +23,15 @@
   opacity: 0;
   visibility: none;
   transition: 0.5s ease;
-  background-color: #fdfdfd;
+  background-color: #fdfdfd83;
   display: flex;
 }
 
 .card:hover .gallery_card__overlay {
   opacity: 1;
+}
+.card:hover .card__image {
+  opacity: 0;
 }
 
 .overlay__text {

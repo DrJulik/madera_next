@@ -37,6 +37,12 @@ const Navbar = ({ onMain }: any) => {
           Projects
         </li>
         <li
+          onClick={() => router.push("/blog")}
+          className={`nav-item ${router.pathname == "/blog" ? "active" : ""} `}
+        >
+          Blog
+        </li>
+        <li
           onClick={() => router.push("/about")}
           className={`nav-item ${router.pathname == "/about" ? "active" : ""} `}
         >

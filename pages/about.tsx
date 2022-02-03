@@ -1,8 +1,13 @@
+import Head from "next/head";
 import React from "react";
 
 const about = () => {
   return (
     <>
+      <Head>
+        <title>About | Madera | Kitchens | Closets</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="banner-image"></div>
 
       <div className="about-grid">

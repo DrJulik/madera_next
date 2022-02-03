@@ -1,13 +1,14 @@
 import React, { useRef } from "react";
 import useSlider from "../hooks/useSlider";
 
-const Slider = ({ images }: any) => {
+const Slider = ({ images, isHome }: any) => {
   const slideImage = useRef(null);
   const slideText = useRef(null);
   const { goToPreviousSlide, goToNextSlide } = useSlider(
     slideImage,
     slideText,
-    images
+    images,
+    isHome
   );
 
   return (

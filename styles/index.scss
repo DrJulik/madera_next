@@ -5,6 +5,7 @@
 @import "./projects/projects";
 @import "./about";
 @import "./contact";
+@import "./components/blog";
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
 * {
@@ -29,6 +30,11 @@ main {
 
 .hidden {
   display: none;
+}
+
+.alice-carousel__slide-info {
+  bottom: 20px;
+  top: inherit !important;
 }
 
 .slider {
@@ -191,7 +197,9 @@ hr {
 }
 
 .contact_text {
-  h3 {
+  h3,
+  h4,
+  p {
     margin-bottom: 1rem;
   }
 }

@@ -1,15 +1,22 @@
 import { useEffect, useState } from "react";
 
-const useSlider = (slideImage: any, slideText: any, images: any) => {
+const useSlider = (
+  slideImage: any,
+  slideText: any,
+  images: any,
+  isHome: boolean
+) => {
   let slideCounter = 0;
 
   useEffect(() => startSlider(), []);
 
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     goToNextSlide();
-  //   }, 6000);
-  // }, []);
+  useEffect(() => {
+    setInterval(() => {
+      if (isHome) {
+        goToNextSlide();
+      }
+    }, 6000);
+  }, []);
 
   const startSlider = () => {
     slideImage.current.style.backgroundImage = `linear-gradient(

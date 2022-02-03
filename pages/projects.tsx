@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState } from "react";
 import Projects from "../components/projects/Projects";
 
@@ -10,6 +11,10 @@ const projects = ({ projects }: any) => {
 
   return (
     <>
+      <Head>
+        <title>Projects | Madera | Kitchens | Closets</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="banner-image__projects"></div>
       <div className="projects-container">
         <div className="project-filters">

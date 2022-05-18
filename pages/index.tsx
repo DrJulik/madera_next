@@ -39,17 +39,6 @@ const Home: NextPage = ({ featuredProjects }: any) => {
     }
   }, [router.isReady]);
 
-  // const [isHome, setIsHome] = useState(false);
-
-  // useEffect(() => {
-  //   console.log(router.isReady);
-  //   console.log(router.pathname);
-  //   clg
-  //   if (router.isReady && router.pathname === "/") {
-  //     setIsHome(true);
-  //     console.log(isHome);
-  //   }
-  // }, [router.isReady, router.pathname]);
   return (
     <>
       <Head>

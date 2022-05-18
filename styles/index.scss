@@ -168,6 +168,10 @@ hr {
     width: 100%;
     box-shadow: rgb(16 16 16 / 35%) 2px 4px 6px 0px;
   }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .about-text {

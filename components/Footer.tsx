@@ -6,9 +6,9 @@ const Footer = () => {
       <footer>
         <div className="footer-info">
           <div className="location-info">
-            <p>OFFICE 387</p>
-            <p>Carlingview Drive, Unit A Toronto, Ontario, M9W 5G7</p>
-            <p>416-236.5381</p>
+            <p>94 Kenhar Dr, Unit 38, North York ON M9L 1N2</p>
+            <p>416-782-7882</p>
+            <p>sales.maderaproducts@gmail.com</p>
           </div>
 
           <img className={`logo`} src="../logo.png" alt="" />

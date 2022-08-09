@@ -70,10 +70,12 @@ const Home: NextPage = ({ featuredProjects }: any) => {
             src="https://www.skona.ca/wp-content/uploads/2019/10/SKONA-70-Otter-kitchen-1.jpg"
             alt=""
           />
-          <p className="about-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo magnam
-            deleniti molestias consectetur ea vitae quaerat expedita odio
-            impedit ex repellendus, facere debitis qui esse!
+          <p className="about-text text-line">
+            <b>Madera</b> is a group of people that loves bringing people joy.
+            And what better way to bring joy than by transforming parts of your
+            living space into exquisite and functional works of art. With our
+            personalized approach we can make sure that your dreams are realized
+            to their full potential, without breaking the bank.
           </p>
         </div>
 
@@ -101,17 +103,18 @@ const Home: NextPage = ({ featuredProjects }: any) => {
               long time, drop us a line and we will be more than happy to bring
               your dreams one step closer to being reality.
             </p>
-            <h4>ADDRESS:</h4>
+            <h4>CONTACT INFORMATION:</h4>
             <p>
-              81C Ronald Avenue, Toronto, Ontario M6E 4M9 Tel. 416-782-7882,
-              e-mail: info@skona.ca
+              <p>94 Kenhar Dr, Unit 38, North York ON M9L 1N2</p>
+              <p>
+                <b>Tel:</b> 416-782-7882{" "}
+              </p>
+              <p>
+                <b>e-mail:</b> sales.maderaproducts@gmail.com
+              </p>
             </p>
             <h4>SHOWROOM HOURS</h4>
-            <p>
-              Monday to Friday – 9:00 am to 5:00 pm – by appointment only
-              Saturday – 10:00 am to 4:00 pm – walk-ins Sunday – Closed By
-              Private Appointment
-            </p>
+            <p>Monday to Saturday – 8:00 am to 6:00 pm</p>
           </div>
           <ContactForm />
         </div>

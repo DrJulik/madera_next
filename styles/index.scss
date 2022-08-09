@@ -14,6 +14,11 @@
   box-sizing: border-box;
 }
 
+// util
+.text-line {
+  line-height: 2rem !important;
+}
+
 body {
   height: 100vh;
   width: 100%;
@@ -24,7 +29,7 @@ main {
   min-height: 100vh;
   position: relative;
   z-index: 1;
-  background-image: url("../public/white-waves.png");
+  // background-image: url("../public/white-waves.png");
   background-color: white;
 }
 
@@ -185,6 +190,7 @@ hr {
 .featured-gallery {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-rows: minmax(1fr, 300px);
   grid-gap: 1.5rem;
   img {
     width: 100%;

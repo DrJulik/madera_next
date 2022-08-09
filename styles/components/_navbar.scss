@@ -1,6 +1,6 @@
 .navbar {
   overflow: hidden;
-  background-color: #efefef;
+  background-color: #f7f7f7ed;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 60%; /* Full width */
@@ -41,10 +41,10 @@
   transition: all linear 0.2s;
 
   &.active {
-    color: #ff5151;
+    color: #fb7b7b;
   }
 
   &:hover {
-    color: #ff5151;
+    color: #fb7b7b;
   }
 }

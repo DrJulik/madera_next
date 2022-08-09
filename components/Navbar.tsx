@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import MobileNav from "./MobileNav";
 
 const Navbar = ({ onMain }: any) => {
   const router = useRouter();
@@ -103,50 +104,7 @@ const Navbar = ({ onMain }: any) => {
             <line x1="21" y1="14" x2="3" y2="14"></line>
             <line x1="21" y1="18" x2="7" y2="18"></line>
           </svg>
-          {mobile && (
-            <ul className="nav-items__mobile">
-              <li
-                onClick={() => router.push("/")}
-                className={`nav-item ${
-                  router.pathname == "/" ? "active" : ""
-                } `}
-              >
-                Home
-              </li>
-              <li
-                onClick={() => router.push("/projects")}
-                className={`nav-item ${
-                  router.pathname == "/projects" ? "active" : ""
-                } `}
-              >
-                Projects
-              </li>
-              <li
-                onClick={() => router.push("/blog")}
-                className={`nav-item ${
-                  router.pathname == "/blog" ? "active" : ""
-                } `}
-              >
-                Blog
-              </li>
-              <li
-                onClick={() => router.push("/about")}
-                className={`nav-item ${
-                  router.pathname == "/about" ? "active" : ""
-                } `}
-              >
-                About
-              </li>
-              <li
-                onClick={() => router.push("/contact")}
-                className={`nav-item ${
-                  router.pathname == "/contact" ? "active" : ""
-                } `}
-              >
-                Contact
-              </li>
-            </ul>
-          )}
+          {mobile && <MobileNav />}
         </>
       )}
     </header>

@@ -17,8 +17,10 @@ const Project = ({ project }: any) => {
           </div>
         </SRLWrapper>
         <div className="project-description">
+          <hr />
           <h2>{project.title}</h2>
           <p>{project.description}</p>
+          <hr />
         </div>
       </div>
     </>

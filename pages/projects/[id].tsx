@@ -1,20 +1,27 @@
 import React from "react";
+import Head from "next/head";
 import { SRLWrapper } from "simple-react-lightbox";
 const Project = ({ project }: any) => {
   return (
-    <div className="project-container">
-      <SRLWrapper>
-        <div className="project-gallery">
-          {project.imageGallery.map((image: any) => {
-            return <img src={image.url} alt="" />;
-          })}
+    <>
+      <Head>
+        <title>{project.title} | Madera | Kitchens | Closets</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <div className="project-container">
+        <SRLWrapper>
+          <div className="project-gallery">
+            {project.imageGallery.map((image: any) => {
+              return <img src={image.url} alt="" />;
+            })}
+          </div>
+        </SRLWrapper>
+        <div className="project-description">
+          <h2>{project.title}</h2>
+          <p>{project.description}</p>
         </div>
-      </SRLWrapper>
-      <div className="project-description">
-        <h2>{project.title}</h2>
-        <p>{project.description}</p>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -7,7 +7,7 @@ const ContactForm = () => {
       method="POST"
       data-netlify="true"
       netlify-honeypot="bot-field"
-      // action="/?success=true"
+      action="/success"
     >
       <p className="hidden">
         <label>
@@ -20,6 +20,7 @@ const ContactForm = () => {
       <input id="email" type="email" name="email" required />
       <label htmlFor="message">Message *</label>
       <textarea id="message" name="message" required></textarea>
+      <input type="hidden" name="form-name" value="contact-form" />
       <button type="submit">Submit</button>
     </form>
   );

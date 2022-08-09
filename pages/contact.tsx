@@ -23,10 +23,18 @@ const contact = () => {
               long time, drop us a line and we will be more than happy to bring
               your dreams one step closer to being reality.
             </p>
-            <h3>ADDRESS:</h3> <p></p>81C Ronald Avenue, Toronto, Ontario M6E 4M9
-            Tel. 416-782-7882, e-mail: info@skona.ca SHOWROOM HOURS Monday to
-            Friday – 9:00 am to 5:00 pm – by appointment only Saturday – 10:00
-            am to 4:00 pm – walk-ins Sunday – Closed By Private Appointment
+            <h4>CONTACT INFORMATION:</h4>
+            <p>
+              <p>94 Kenhar Dr, Unit 38, North York ON M9L 1N2</p>
+              <p>
+                <b>Tel:</b> 416-782-7882{" "}
+              </p>
+              <p>
+                <b>e-mail:</b> sales.maderaproducts@gmail.com
+              </p>
+            </p>
+            <h4>SHOWROOM HOURS</h4>
+            <p>Monday to Saturday – 8:00 am to 6:00 pm</p>
           </div>
           <ContactForm />
         </div>

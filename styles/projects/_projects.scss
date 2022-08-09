@@ -3,8 +3,9 @@
   flex-direction: column;
   // justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   margin-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .banner-image__projects {
@@ -44,8 +45,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   margin: 5%;
+  padding: 5%;
 }
 
 .project-gallery {
@@ -70,8 +72,14 @@
 
 .project-description {
   margin-left: 1rem;
+  position: sticky;
+  top: 20%;
 
   h2 {
     margin-bottom: 1rem;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    display: none;
   }
 }

@@ -9,7 +9,8 @@ const ContactForm = () => {
       // action="/thank-you"
     >
       {/* <input type="hidden" name="form-name" value="madera-form" /> */}
-      <input name="random" id="random" type="text"></input>
+      <label htmlFor="random">Name *</label>
+      <input name="random" id="random" type="text" />
       <button type="submit">Send</button>
     </form>
 

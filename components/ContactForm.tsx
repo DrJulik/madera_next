@@ -1,18 +1,32 @@
 import React from "react";
+import { useRouter } from "next/router";
 
 const ContactForm = () => {
+  const router = useRouter();
+  const confirmationScreenVisible =
+    router.query?.success && router.query.success === "true";
+  const formVisible = !confirmationScreenVisible;
   return (
-    <form
-      name="madera-form"
-      method="POST"
-      data-netlify="true"
-      // action="/thank-you"
-    >
-      {/* <input type="hidden" name="form-name" value="madera-form" /> */}
-      <label htmlFor="random">Name *</label>
-      <input name="random" id="random" type="text" />
-      <button type="submit">Send</button>
-    </form>
+    <>
+      {formVisible ? (
+        <form
+          name="madera-form"
+          method="POST"
+          data-netlify="true"
+          action="/?success=true"
+        >
+          {/* <input type="hidden" name="form-name" value="madera-form" /> */}
+          <label htmlFor="random">Name *</label>
+          <input name="random" id="random" type="text" />
+          <button type="submit">Send</button>
+        </form>
+      ) : (
+        <p>
+          Thank you for submitting this form. Someone should get back to you
+          within 24-48 hours
+        </p>
+      )}
+    </>
 
     // <form
     //   name="madera-form"

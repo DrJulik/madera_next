@@ -13,7 +13,7 @@ const ContactForm = () => {
           name="madera-form"
           method="POST"
           data-netlify="true"
-          action="/?success=true"
+          action="?success=true"
         >
           {/* <input type="hidden" name="form-name" value="madera-form" /> */}
           <label htmlFor="random">Name *</label>

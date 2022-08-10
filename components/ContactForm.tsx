@@ -8,7 +8,7 @@ const ContactForm = () => {
       data-netlify="true"
       action="/success"
     >
-      <input type="hidden" name="form-name" value="madera-form" />
+      {/* <input type="hidden" name="form-name" value="madera-form" /> */}
       <input name="name" id="name"></input>
       <button type="submit">Send</button>
     </form>

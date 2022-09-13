@@ -4,7 +4,7 @@ const GalleryItem = ({ id, mainImage, title }: any) => {
   const router = useRouter();
   return (
     <div className="card" onClick={() => router.push(`/projects/${id}`)}>
-      <img src={mainImage} className="card__image" />
+      <img src={mainImage} className="card__image" alt={title} />
       <div className="gallery_card__overlay">
         <div className="overlay__text">
           <h3>{title}</h3>

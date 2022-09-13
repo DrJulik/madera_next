@@ -9,7 +9,7 @@ const Blogpost = ({ post }: any) => {
       </Head>
       <div className="banner-image__contact"></div>
       <div className="post-container">
-        <img src={post.image.url} alt="" />
+        <img src={post.image.url} alt={post.title} />
         <div className="post-text">
           <h2>{post.title}</h2>
           <p>

@@ -9,29 +9,33 @@ import { useRouter } from "next/router";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import Partners from "../components/Partners";
+import Image from "next/image";
 
 const Home: NextPage = ({ featuredProjects }: any) => {
   const handleDragStart = (e: any) => e.preventDefault();
   const items = [
     <img
-      src="https://www.skona.ca/wp-content/uploads/2021/04/Skona-Southlea-Kitchen-Appliances-main-scaled.jpg"
+      alt="Slider image"
+      src="index/1.jpg"
       onDragStart={handleDragStart}
       style={{ height: "100vh", width: "100vw" }}
     />,
     <img
-      src="https://www.skona.ca/wp-content/uploads/2021/04/Skona-Strathearn-Kitchen-Angle-Picture-slider-scaled.jpg"
+      alt="Slider image"
+      src="index/2.jpg"
       onDragStart={handleDragStart}
       style={{ height: "100vh", width: "100vw" }}
     />,
     <img
-      src="https://www.skona.ca/wp-content/uploads/2020/12/SKONA-585-Hillsdale-Kitchen-CloseUp-2560x1440-1.jpg"
+      alt="Slider image"
+      src="index/3.jpg"
       onDragStart={handleDragStart}
       style={{ height: "100vh", width: "100vw" }}
     />,
   ];
 
-  const titles = ["IKEA", "NOKIA", "PUTINKA"];
-  const [slideTitle, setSlideTitle] = useState(titles[0]);
+  // const titles = ["IKEA", "NOKIA", "PUTINKA"];
+  // const [slideTitle, setSlideTitle] = useState(titles[0]);
 
   const router = useRouter();
   useEffect(() => {
@@ -45,6 +49,10 @@ const Home: NextPage = ({ featuredProjects }: any) => {
       <Head>
         <title>Madera | Kitchens | Closets</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="We are makers of fine custom kitchens and closets. Let us make your vision come to life."
+        />
       </Head>
       <AliceCarousel
         mouseTracking
@@ -69,7 +77,7 @@ const Home: NextPage = ({ featuredProjects }: any) => {
         <div className="about-wrapper">
           <img
             src="https://www.skona.ca/wp-content/uploads/2019/10/SKONA-70-Otter-kitchen-1.jpg"
-            alt=""
+            alt="about-image"
           />
           <p className="about-text text-line">
             <b>Madera</b> is a group of people that loves bringing people joy.

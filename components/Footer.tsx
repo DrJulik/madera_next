@@ -11,9 +11,13 @@ const Footer = () => {
             <p>sales.maderaproducts@gmail.com</p>
           </div>
 
-          <img className={`logo`} src="../logo.png" alt="" />
+          <img className={`logo`} src="../logo.png" alt="Logo" />
           <div className="socials">
-            <a href="https://www.facebook.com/maderaproducts" target="_blank">
+            <a
+              href="https://www.facebook.com/maderaproducts"
+              target="_blank"
+              aria-label="Facebook"
+            >
               <svg
                 fill="#000000"
                 xmlns="http://www.w3.org/2000/svg"
@@ -28,6 +32,7 @@ const Footer = () => {
             <a
               href="https://www.instagram.com/madera_products/?hl=en"
               target="_blank"
+              aria-label="Instagram"
             >
               <svg
                 fill="#000000"

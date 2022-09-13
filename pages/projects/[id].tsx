@@ -12,7 +12,7 @@ const Project = ({ project }: any) => {
         <SRLWrapper>
           <div className="project-gallery">
             {project.imageGallery.map((image: any) => {
-              return <img src={image.url} alt="" />;
+              return <img src={image.url} alt="image" />;
             })}
           </div>
         </SRLWrapper>

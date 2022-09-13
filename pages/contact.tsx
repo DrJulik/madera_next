@@ -8,6 +8,10 @@ const contact = () => {
       <Head>
         <title>Contact us | Madera | Kitchens | Closets</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="We are makers of fine custom kitchens and closets. Let us make your vision come to life."
+        />
       </Head>
       <div className="banner-image__contact"></div>
 

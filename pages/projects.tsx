@@ -14,6 +14,10 @@ const projects = ({ projects }: any) => {
       <Head>
         <title>Projects | Madera | Kitchens | Closets</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="We are makers of fine custom kitchens and closets. Let us make your vision come to life."
+        />
       </Head>
       <div className="banner-image__projects"></div>
       <div className="projects-container">

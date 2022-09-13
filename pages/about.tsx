@@ -7,11 +7,15 @@ const about = () => {
       <Head>
         <title>About | Madera | Kitchens | Closets</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="We are makers of fine custom kitchens and closets. Let us make your vision come to life."
+        />
       </Head>
       <div className="banner-image"></div>
 
       <div className="about-grid">
-        <img src="/about1.jpg" alt="" />
+        <img src="/about1.jpg" alt="About" />
         <div className="about-text">
           <h2>Our ultimate goal</h2>
           <p style={{ lineHeight: "2rem" }}>
@@ -31,7 +35,7 @@ const about = () => {
             may have after we are done with the installation.
           </p>
         </div>
-        <img src="/about1.jpg" alt="" />
+        <img src="/about1.jpg" alt="About" />
       </div>
     </>
   );

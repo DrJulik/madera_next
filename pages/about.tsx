@@ -15,7 +15,7 @@ const about = () => {
       <div className="banner-image"></div>
 
       <div className="about-grid">
-        <img src="/about1.jpg" alt="About" />
+        <img src="/about2.jpg" alt="About" />
         <div className="about-text">
           <h2>Our ultimate goal</h2>
           <p style={{ lineHeight: "2rem" }}>
@@ -35,7 +35,7 @@ const about = () => {
             may have after we are done with the installation.
           </p>
         </div>
-        <img src="/about1.jpg" alt="About" />
+        <img src="/about.jpg" alt="About" />
       </div>
     </>
   );

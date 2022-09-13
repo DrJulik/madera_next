@@ -16,12 +16,6 @@ const Home: NextPage = ({ featuredProjects }: any) => {
   const items = [
     <img
       alt="Slider image"
-      src="index/1.jpg"
-      onDragStart={handleDragStart}
-      style={{ height: "100vh", width: "100vw" }}
-    />,
-    <img
-      alt="Slider image"
       src="index/2.jpg"
       onDragStart={handleDragStart}
       style={{ height: "100vh", width: "100vw" }}
@@ -29,6 +23,12 @@ const Home: NextPage = ({ featuredProjects }: any) => {
     <img
       alt="Slider image"
       src="index/3.jpg"
+      onDragStart={handleDragStart}
+      style={{ height: "100vh", width: "100vw" }}
+    />,
+    <img
+      alt="Slider image"
+      src="index/1.jpg"
       onDragStart={handleDragStart}
       style={{ height: "100vh", width: "100vw" }}
     />,
@@ -75,10 +75,7 @@ const Home: NextPage = ({ featuredProjects }: any) => {
         <h2 className="section-heading">We Create And Design Your Dreams</h2>
         <hr />
         <div className="about-wrapper">
-          <img
-            src="https://www.skona.ca/wp-content/uploads/2019/10/SKONA-70-Otter-kitchen-1.jpg"
-            alt="about-image"
-          />
+          <img src="vuzh.jpg" alt="about-image" />
           <p className="about-text text-line">
             <b>Madera</b> is a group of people that loves bringing people joy.
             And what better way to bring joy than by transforming parts of your

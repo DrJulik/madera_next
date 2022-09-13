@@ -142,8 +142,8 @@ main {
 // about block
 
 hr {
-  border: 1px solid #ffad1730;
-  margin: 50px 0;
+  border: 1px solid #6c6c6c;
+  margin: 30px 0;
 }
 
 .container {
@@ -160,10 +160,10 @@ hr {
 
 .section-heading {
   letter-spacing: 4px;
-  background-color: #ffad1730;
+  // background-color: #ffad1730;
   text-align: center;
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   padding: 2rem 8rem 2rem 2rem;
 }
 
@@ -203,6 +203,14 @@ hr {
   }
 }
 
+.partners {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  align-items: center;
+  grid-gap: 2rem;
+}
+
 // contact
 
 .contact-wrapper {
@@ -222,4 +230,38 @@ hr {
   p {
     margin-bottom: 1rem;
   }
+}
+
+.btn {
+  font-family: inherit;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 25px;
+  width: auto;
+  outline: 0;
+  font-size: 11px;
+  line-height: 2em;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+  padding: 15px 43px;
+  cursor: pointer;
+  color: #363636;
+  background-color: transparent;
+  border: 1px solid #363636;
+}
+
+.center {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
 }

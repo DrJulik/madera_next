@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import Partners from "../components/Partners";
 
 const Home: NextPage = ({ featuredProjects }: any) => {
   const handleDragStart = (e: any) => e.preventDefault();
@@ -63,7 +64,7 @@ const Home: NextPage = ({ featuredProjects }: any) => {
       />
       {/* About block */}
       <div className="container" id="about">
-        <h2 className="section-heading">A little bit about us</h2>
+        <h2 className="section-heading">We Create And Design Your Dreams</h2>
         <hr />
         <div className="about-wrapper">
           <img
@@ -79,16 +80,17 @@ const Home: NextPage = ({ featuredProjects }: any) => {
           </p>
         </div>
 
-        <hr />
+        {/* <hr />  */}
       </div>
       {/* projects */}
       <div className="container">
         <h2 className="section-heading">Featured projects</h2>
         <hr />
         <FeaturedGallery featuredProjects={featuredProjects} />
-        <hr />
+        {/* <hr /> */}
       </div>
       {/* contact block */}
+      <Partners />
       <div className="container">
         <h2 className="section-heading">Contact us</h2>
         <hr />
@@ -107,7 +109,7 @@ const Home: NextPage = ({ featuredProjects }: any) => {
             <p>
               <p>94 Kenhar Dr, Unit 38, North York ON M9L 1N2</p>
               <p>
-                <b>Tel:</b> 416-782-7882{" "}
+                <b>Tel:</b> 416-417-1944{" "}
               </p>
               <p>
                 <b>e-mail:</b> sales.maderaproducts@gmail.com

@@ -27,7 +27,7 @@ const contact = () => {
             <p>
               <p>94 Kenhar Dr, Unit 38, North York ON M9L 1N2</p>
               <p>
-                <b>Tel:</b> 416-782-7882{" "}
+                <b>Tel:</b> 416-417-1944{" "}
               </p>
               <p>
                 <b>e-mail:</b> sales.maderaproducts@gmail.com

@@ -12,19 +12,11 @@ const Blogpost = ({ post }: any) => {
         <img src={post.image.url} alt={post.title} />
         <div className="post-text">
           <h2>{post.title}</h2>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea
-            quibusdam eveniet velit facilis assumenda nihil consequuntur numquam
-            magnam, corporis delectus praesentium autem harum illum nostrum
-            beatae unde perspiciatis tempora sequi sed incidunt atque eum id.
-            Itaque consequuntur, fuga similique eum, assumenda minima tempora
-            nihil nulla magni neque, consequatur ducimus ullam. Et repellendus
-            beatae numquam nobis est laudantium ipsam alias, reiciendis iusto
-            blanditiis autem commodi ullam officiis sapiente nemo facere
-            eligendi optio cupiditate saepe. Maiores omnis ratione, facilis quos
-            soluta cupiditate accusamus ut doloremque vero accusantium minima
-            rem vitae possimus vel assumenda in iure perferendis. Doloribus
-            dolorem reprehenderit porro eum voluptate?
+          <p style={{ marginBottom: "1rem" }}>
+            {new Date(post.published_at).toDateString()}
+          </p>
+          <p style={{ fontSize: "1.2rem", lineHeight: "1.9rem" }}>
+            {post.text}
           </p>
         </div>
       </div>

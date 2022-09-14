@@ -13,6 +13,7 @@ const Blog = ({ blogposts }: any) => {
             text={post.text}
             image={post.image.url}
             tags={post.tags}
+            published_at={post.published_at}
           />
         );
       })}

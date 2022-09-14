@@ -4,7 +4,7 @@
 
 .blog-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   width: 100%;
   margin: auto;
   grid-gap: 2rem;
@@ -15,11 +15,12 @@
   grid-template-columns: 50% 50%;
   justify-items: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
   box-shadow: #cccccc70 1px 1px 5px;
   background: rgb(255, 255, 255);
 
   img {
+    box-shadow: #0000003d 5px 4px 5px;
     height: 100%;
     width: 100%;
   }
@@ -43,6 +44,11 @@
 
 .post-description {
   padding: 1rem;
+
+  .post-text {
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+  }
 
   p {
     margin: 1.5rem 0;

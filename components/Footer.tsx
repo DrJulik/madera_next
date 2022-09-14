@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="footer-info">
           <div className="location-info">
             <p>94 Kenhar Dr, Unit 38, North York ON M9L 1N2</p>
-            <p>416-782-7882</p>
+            <p>416-417-1944</p>
             <p>sales.maderaproducts@gmail.com</p>
           </div>
 

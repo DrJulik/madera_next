@@ -19,10 +19,18 @@
   box-shadow: #cccccc70 1px 1px 5px;
   background: rgb(255, 255, 255);
 
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: 100%;
+  }
+
   img {
     box-shadow: #0000003d 5px 4px 5px;
     height: 100%;
     width: 100%;
+
+    @media only screen and (max-width: 800px) {
+      display: none;
+    }
   }
 }
 

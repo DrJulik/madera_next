@@ -14,6 +14,11 @@
   max-height: 400px;
   height: 400px;
   background-position: -39px -492px;
+
+  @media only screen and (max-width: 800px) {
+    max-height: 250px;
+    height: 250px;
+  }
 }
 
 .project-filters {
@@ -37,6 +42,10 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2rem;
   margin: 0 5%;
+
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-container {

@@ -35,7 +35,10 @@ const Navbar = ({ onMain }: any) => {
   return (
     <header
       className="navbar"
-      style={{ width: fullWidth || isMobile ? "100%" : "" }}
+      style={{
+        width: fullWidth || isMobile ? "100%" : "",
+        height: mobile ? "100%" : "inherit",
+      }}
     >
       <img
         className={`${onMain ? (fullWidth ? "logo-shrunk" : "") : ""} logo`}
@@ -104,7 +107,7 @@ const Navbar = ({ onMain }: any) => {
             <line x1="21" y1="14" x2="3" y2="14"></line>
             <line x1="21" y1="18" x2="7" y2="18"></line>
           </svg>
-          {mobile && <MobileNav />}
+          {mobile && <MobileNav setMobile={setMobile} mobile={mobile} />}
         </>
       )}
     </header>

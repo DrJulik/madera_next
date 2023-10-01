@@ -12,7 +12,7 @@ import Partners from "../components/Partners";
 import Image from "next/image";
 import BlogPreview from "../components/BlogPreview";
 
-const Home: NextPage = ({ featuredProjects, blogs }: any) => {
+const Home: NextPage = () => {
   const handleDragStart = (e: any) => e.preventDefault();
   const items = [
     <img
@@ -92,13 +92,13 @@ const Home: NextPage = ({ featuredProjects, blogs }: any) => {
       <div className="container">
         <h2 className="section-heading">Featured projects</h2>
         <hr />
-        <FeaturedGallery featuredProjects={featuredProjects} />
+        {/* <FeaturedGallery featuredProjects={featuredProjects} /> */}
         {/* <hr /> */}
       </div>
       <div className="container">
         <h2 className="section-heading">Our blog</h2>
         <hr />
-        <BlogPreview blogs={blogs} />
+        {/* <BlogPreview blogs={blogs} /> */}
         {/* <hr /> */}
       </div>
       {/* contact block */}
@@ -137,21 +137,5 @@ const Home: NextPage = ({ featuredProjects, blogs }: any) => {
     </>
   );
 };
-export async function getStaticProps(context: any) {
-  const res = await fetch("https://madera-strapi.herokuapp.com/projects");
-  const projects = await res.json();
-  const res1 = await fetch("https://madera-strapi.herokuapp.com/blogposts");
-  const blogs = await res1.json();
-
-  const featuredProjects = projects.filter((proj: any) => {
-    return proj.Favorite === true;
-  });
-  return {
-    props: {
-      featuredProjects,
-      blogs,
-    }, // will be passed to the page component as props
-  };
-}
 
 export default Home;

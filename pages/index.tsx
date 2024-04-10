@@ -13,30 +13,44 @@ import Image from "next/image";
 import BlogPreview from "../components/BlogPreview";
 
 const Home: NextPage = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      const match = window.matchMedia("(max-width: 768px)").matches;
+      setIsMobile(match);
+    };
+
+    // Check on mount
+    checkIfMobile();
+
+    // Listen for resize events
+    window.addEventListener("resize", checkIfMobile);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkIfMobile);
+  }, []);
   const handleDragStart = (e: any) => e.preventDefault();
   const items = [
     <img
       alt="Slider image"
-      src="index/2.jpg"
+      src={isMobile ? "index/2_mobile.jpg" : "index/2.jpg"}
       onDragStart={handleDragStart}
       style={{ height: "100vh", width: "100vw" }}
     />,
     <img
       alt="Slider image"
-      src="index/3.jpg"
+      src={isMobile ? "index/1_mobile.jpg" : "index/1.jpg"}
       onDragStart={handleDragStart}
       style={{ height: "100vh", width: "100vw" }}
     />,
     <img
       alt="Slider image"
-      src="index/1.jpg"
+      src={isMobile ? "index/3_mobile.jpg" : "index/3.jpg"}
       onDragStart={handleDragStart}
       style={{ height: "100vh", width: "100vw" }}
     />,
   ];
-
-  // const titles = ["IKEA", "NOKIA", "PUTINKA"];
-  // const [slideTitle, setSlideTitle] = useState(titles[0]);
 
   const router = useRouter();
   useEffect(() => {

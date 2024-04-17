@@ -3,22 +3,20 @@ import { useState, useEffect } from "react";
 import Project from "./Project";
 const Projects = ({ projects, filter }: any) => {
   const [shownProjects, setShownProjects] = useState(projects);
-
   useEffect(() => {
     if (filter === "kitchens") {
       const kitchenProjects = projects.filter((proj: any) => {
-        return proj.Category === "Kitchen";
+        return proj.attributes.category === "Kitchen";
       });
       setShownProjects(kitchenProjects);
     } else if (filter === "closets") {
       const closetProjects = projects.filter((proj: any) => {
-        return proj.Category === "Closet";
+        return proj.attributes.category === "Closet";
       });
       setShownProjects(closetProjects);
     } else {
       setShownProjects(projects);
     }
-    console.log(filter);
   }, [filter]);
 
   return (
@@ -26,6 +24,7 @@ const Projects = ({ projects, filter }: any) => {
       <AnimatePresence exitBeforeEnter>
         {shownProjects &&
           shownProjects.map((project: any) => {
+            const {title, main_image} = project.attributes;
             return (
               <motion.div
                 key={project.id}
@@ -36,8 +35,8 @@ const Projects = ({ projects, filter }: any) => {
                 <Project
                   key={project.id}
                   id={project.id}
-                  title={project.title}
-                  mainImage={project.mainImage}
+                  title={title}
+                  mainImage={main_image.data.attributes.url}
                 />
               </motion.div>
             );

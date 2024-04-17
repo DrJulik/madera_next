@@ -5,15 +5,16 @@ const Blog = ({ blogposts }: any) => {
   return (
     <>
       {blogposts.map((post: any) => {
+        const {title, text, image, publishedAt} = post.attributes;
         return (
           <Post
             key={post.id}
             id={post.id}
-            title={post.title}
-            text={post.text}
-            image={post.image.url}
-            tags={post.tags}
-            published_at={post.published_at}
+            title={title}
+            text={text}
+            image={image.data.attributes.url}
+            // tags={post.tags}
+            published_at={publishedAt}
           />
         );
       })}

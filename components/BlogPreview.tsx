@@ -2,17 +2,18 @@ import React from "react";
 import GalleryItem from "./GalleryItem";
 import Router from "next/router";
 
-const BlogPreview = ({ blogs }: any) => {
+const BlogPreview = ({ featuredBlogposts }: any) => {
   return (
     <>
       <div className="featured-gallery">
-        {blogs.map((blog: any) => {
+        {featuredBlogposts.map((blog: any) => {
+          const {image, title} = blog.attributes;
           return (
             <GalleryItem
               key={blog.id}
               id={blog.id}
-              mainImage={blog.image.url}
-              title={blog.title}
+              mainImage={image.data.attributes.url}
+              title={title}
               blog={true}
             />
           );

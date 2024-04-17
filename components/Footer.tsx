@@ -11,7 +11,7 @@ const Footer = () => {
             <p>sales.maderaproducts@gmail.com</p>
           </div>
 
-          <img className={`logo`} src="../logo.png" alt="Logo" />
+          <img className={`logo`} src="/../logo.png" alt="Logo" />
           <div className="socials">
             <a
               href="https://www.facebook.com/maderaproducts"

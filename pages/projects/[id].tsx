@@ -1,27 +1,26 @@
-import React, { useState } from "react";
 import Head from "next/head";
 import { SRLWrapper } from "simple-react-lightbox";
 
-const Project = () => {
-  const [project, setProject] = useState([])
+const Project = ({ project }: any) => {
+  const { title, description, image_gallery } = project.attributes;
   return (
     <>
       <Head>
-        <title>{project.title} | Madera | Kitchens | Closets</title>
+        <title>{title} | Madera | Kitchens | Closets</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="project-container">
         <SRLWrapper>
           <div className="project-gallery">
-            {project.imageGallery.map((image: any) => {
-              return <img src={image.url} alt="image" />;
+            {image_gallery.data && image_gallery.data.map((image: any) => {
+              return <img src={image.attributes.url} alt="image" />;
             })}
           </div>
         </SRLWrapper>
         <div className="project-description">
           <hr />
-          <h2>{project.title}</h2>
-          <p>{project.description}</p>
+          <h2>{title}</h2>
+          <p>{description}</p>
           <hr />
         </div>
       </div>
@@ -29,30 +28,30 @@ const Project = () => {
   );
 };
 
-// export async function getStaticPaths() {
-//   const res = await fetch("https://madera-strapi.herokuapp.com/projects");
-//   const projects = await res.json();
+export async function getStaticPaths() {
+  const res = await fetch("https://strapi-production-7c79.up.railway.app/api/projects");
+  const projects = await res.json();
+  const paths = projects.data.map((project: any) => ({
+    params: {
+      id: project.id.toString(),
+    },
+  }))
+  return {
+    paths: paths,
+    fallback: false,
+  };
+}
 
-//   return {
-//     paths: projects.map((project: any) => ({
-//       params: {
-//         id: project.id,
-//       },
-//     })),
-//     fallback: false,
-//   };
-// }
+export async function getStaticProps({ params }: any) {
+  const res = await fetch(
+    `https://strapi-production-7c79.up.railway.app/api/projects/${params.id}?populate=*`
+  );
+  const project = await res.json();
 
-// export async function getStaticProps({ params }: any) {
-//   const res = await fetch(
-//     `https://madera-strapi.herokuapp.com/projects/${params.id}`
-//   );
-//   const project = await res.json();
-
-//   return {
-//     props: { project: project },
-//     // revalidate: 1,
-//   };
-// }
+  return {
+    props: { project: project.data },
+    // revalidate: 1,
+  };
+}
 
 export default Project;

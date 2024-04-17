@@ -7,12 +7,13 @@ const FeaturedGallery = ({ featuredProjects }: any) => {
     <>
       <div className="featured-gallery">
         {featuredProjects.map((proj: any) => {
+          const {main_image, title} = proj.attributes;
           return (
             <GalleryItem
               key={proj.id}
               id={proj.id}
-              mainImage={proj.mainImage.url}
-              title={proj.title}
+              mainImage={main_image.data.attributes.url}
+              title={title}
             />
           );
         })}

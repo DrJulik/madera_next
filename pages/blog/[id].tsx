@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 const Blogpost = ({ post }: any) => {
+  const {title, text, image, publishedAt} = post.attributes;
   return (
     <>
       <Head>
@@ -9,14 +10,14 @@ const Blogpost = ({ post }: any) => {
       </Head>
       <div className="banner-image__contact"></div>
       <div className="post-container">
-        <img src={post.image.url} alt={post.title} />
+        <img src={image.data.attributes.url} alt={title} />
         <div className="post-text">
-          <h2>{post.title}</h2>
+          <h2>{title}</h2>
           <p style={{ marginBottom: "1rem" }}>
-            {new Date(post.published_at).toDateString()}
+            {new Date(publishedAt).toDateString()}
           </p>
           <p style={{ fontSize: "1.2rem", lineHeight: "1.9rem" }}>
-            {post.text}
+            {text}
           </p>
         </div>
       </div>
@@ -25,13 +26,13 @@ const Blogpost = ({ post }: any) => {
 };
 
 export async function getStaticPaths() {
-  const res = await fetch("https://madera-strapi.herokuapp.com/blogposts");
+  const res = await fetch("https://strapi-production-7c79.up.railway.app/api/blogposts?populate=*");
   const blogposts = await res.json();
 
   return {
-    paths: blogposts.map((post: any) => ({
+    paths: blogposts.data.map((post: any) => ({
       params: {
-        id: post.id,
+        id: post.id.toString(),
       },
     })),
     fallback: false,
@@ -40,12 +41,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: any) {
   const res = await fetch(
-    `https://madera-strapi.herokuapp.com/blogposts/${params.id}`
+    `https://strapi-production-7c79.up.railway.app/api/blogposts/${params.id}?populate=*`
   );
   const post = await res.json();
 
   return {
-    props: { post: post },
+    props: { post: post.data },
     // revalidate: 1,
   };
 }

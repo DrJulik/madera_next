@@ -18,7 +18,7 @@ const Post = ({ id, title, text, image, tags, published_at }: any) => {
         <p className="article-link" onClick={() => router.push(`/blog/${id}`)}>
           Read more...
         </p>
-        <p className="tags">{tags.map((tag: any) => tag.tag)}</p>
+        {/* <p className="tags">{tags.map((tag: any) => tag.tag)}</p> */}
       </div>
       <img src={image} alt="post-image" />
     </div>

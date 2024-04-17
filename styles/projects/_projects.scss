@@ -57,6 +57,11 @@
   height: 100%;
   margin: 5%;
   padding: 5%;
+
+  @media only screen and (max-width: 1050px) {
+    grid-template-columns: 1fr;
+    margin-top: 15%;
+  }
 }
 
 .project-gallery {
@@ -65,8 +70,8 @@
   align-items: center;
 
   img {
-    // width: 50%;
-    max-width: 500px;
+    // width: 100%;
+    max-width: 100%;
     max-height: 560px;
     // height: 10rem;
     margin: 1rem auto;
@@ -76,6 +81,8 @@
       cursor: pointer;
       opacity: 0.8;
     }
+
+
   }
 }
 

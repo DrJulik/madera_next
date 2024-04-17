@@ -26,14 +26,14 @@ const projects = ({ projects }: any) => {
           <p onClick={() => filterProjects("kitchens")}>Kitchens</p>
           <p onClick={() => filterProjects("closets")}>Closets</p>
         </div>
-        <Projects projects={projects} filter={filter} />
+        <Projects projects={projects.data} filter={filter} />
       </div>
     </>
   );
 };
 
 export async function getStaticProps(context: any) {
-  const res = await fetch("https://madera-strapi.herokuapp.com/projects");
+  const res = await fetch("https://strapi-production-7c79.up.railway.app/api/projects?populate=*");
   const projects = await res.json();
   return {
     props: {

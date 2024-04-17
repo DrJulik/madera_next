@@ -12,7 +12,7 @@ import Partners from "../components/Partners";
 import Image from "next/image";
 import BlogPreview from "../components/BlogPreview";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({featuredProjects, featuredBlogposts}:any) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -30,6 +30,8 @@ const Home: NextPage = () => {
     // Cleanup
     return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
+
+
   const handleDragStart = (e: any) => e.preventDefault();
   const items = [
     <img
@@ -106,13 +108,13 @@ const Home: NextPage = () => {
       <div className="container">
         <h2 className="section-heading">Featured projects</h2>
         <hr />
-        {/* <FeaturedGallery featuredProjects={featuredProjects} /> */}
+        <FeaturedGallery featuredProjects={featuredProjects} />
         {/* <hr /> */}
       </div>
       <div className="container">
         <h2 className="section-heading">Our blog</h2>
         <hr />
-        {/* <BlogPreview blogs={blogs} /> */}
+        <BlogPreview featuredBlogposts={featuredBlogposts} />
         {/* <hr /> */}
       </div>
       {/* contact block */}
@@ -151,5 +153,21 @@ const Home: NextPage = () => {
     </>
   );
 };
+
+export async function getStaticProps(context: any) {
+  const res = await fetch("https://strapi-production-7c79.up.railway.app/api/projects?filters[featured][$eq]=true&populate=*");
+  const featuredProjects = await res.json();
+
+  
+  const res1 = await fetch("https://strapi-production-7c79.up.railway.app/api/blogposts?filters[featured][$eq]=true&populate=*");
+  const featuredBlogposts = await res1.json();
+  
+  return {
+    props: {
+      featuredProjects:featuredProjects.data,
+      featuredBlogposts: featuredBlogposts.data,
+    }, 
+  };
+}
 
 export default Home;

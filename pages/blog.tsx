@@ -15,7 +15,7 @@ const blog = ({ blogposts }: any) => {
       <div className="banner-image__contact"></div>
       <div className="blog-page">
         <div className="blog-wrapper">
-          <Blog blogposts={blogposts} />
+          <Blog blogposts={blogposts.data} />
         </div>
       </div>
     </>
@@ -23,7 +23,7 @@ const blog = ({ blogposts }: any) => {
 };
 
 export async function getStaticProps(context: any) {
-  const res = await fetch("https://madera-strapi.herokuapp.com/blogposts");
+  const res = await fetch("https://strapi-production-7c79.up.railway.app/api/blogposts?populate=*");
   const blogposts = await res.json();
 
   return {

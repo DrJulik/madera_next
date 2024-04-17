@@ -62,4 +62,10 @@ footer {
   justify-content: center;
   align-items: center;
   // padding: 0 50px;
+
+  @media only screen and (max-width: 768px) {
+    .nav-item {
+      font-size: 0.9rem;
+    }
+  }
 }

@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 const Post = ({ id, title, text, image, tags, published_at }: any) => {
   const router = useRouter();
 
-  const limit = 450;
+  const limit = 300;
   // const cutText = text.substring(0, limit);
   let cutText =
     text.length > limit

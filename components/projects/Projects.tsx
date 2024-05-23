@@ -6,15 +6,37 @@ const Projects = ({ projects, filter }: any) => {
   useEffect(() => {
     if (filter === "kitchens") {
       const kitchenProjects = projects.filter((proj: any) => {
-        return proj.attributes.category === "Kitchen";
+        const categories = proj.attributes.categories.data;
+        if(categories && categories.length > 0) {
+          return categories.some((cat:any) => cat.attributes.Title === "Kitchen")
+        }
       });
       setShownProjects(kitchenProjects);
     } else if (filter === "closets") {
       const closetProjects = projects.filter((proj: any) => {
-        return proj.attributes.category === "Closet";
+        const categories = proj.attributes.categories.data;
+        if(categories && categories.length > 0) {
+          return categories.some((cat:any) => cat.attributes.Title === "Closet")
+        }
       });
       setShownProjects(closetProjects);
-    } else {
+    } else if (filter === "vanity") { 
+      const vanityProjects = projects.filter((proj: any) => {
+        const categories = proj.attributes.categories.data;
+        if(categories && categories.length > 0) {
+          return categories.some((cat:any) => cat.attributes.Title === "Vanity")
+        }
+      });
+      setShownProjects(vanityProjects);
+    } else if (filter === "laundry") {
+      const laundryProjects = projects.filter((proj: any) => {
+        const categories = proj.attributes.categories.data;
+        if(categories && categories.length > 0) {
+          return categories.some((cat:any) => cat.attributes.Title === "Laundry")
+        }
+      });
+      setShownProjects(laundryProjects);
+  } else {
       setShownProjects(projects);
     }
   }, [filter]);

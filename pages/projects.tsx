@@ -25,6 +25,8 @@ const projects = ({ projects }: any) => {
           <p onClick={() => filterProjects("none")}>Show All</p>
           <p onClick={() => filterProjects("kitchens")}>Kitchens</p>
           <p onClick={() => filterProjects("closets")}>Closets</p>
+          <p onClick={() => filterProjects("vanity")}>Vanity</p>
+          <p onClick={() => filterProjects("laundry")}>Laundry</p>
         </div>
         <Projects projects={projects.data} filter={filter} />
       </div>
